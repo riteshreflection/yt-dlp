@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: yt-dlp-server
+    name: yt-dlp
     env: node
     plan: free
     buildCommand: |
