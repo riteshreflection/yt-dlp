@@ -13,7 +13,7 @@ app.get("/video", (req, res) => {
         return res.status(400).json({ error: "Missing 'url' parameter" });
     }
 
-    const cmd = `yt-dlp --add-header "Cookie: ${COOKIE_HEADER}" -g "${videoUrl}"`;
+    const cmd = `yt-dlp --add-header "Cookie: ${process.env.YT_COOKIE}" -g "${videoUrl}"`;
 
     exec(cmd, (err, stdout, stderr) => {
         if (err) {
